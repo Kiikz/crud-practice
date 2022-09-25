@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>College Football Team Tracker</title>
+
+  </head>
+
+  <body>
+    <h1 data-position="header">Whats your favorite college football team?</h1>
+
+    <section data-position="add-quote">
+      <h2>Add Team</h2>
+
+      <form action="/teams" method="POST">
+        <input type="text" placeholder="team name" name="team" />
+        <input type="text" placeholder="team quote" name="quote" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section data-position="teams">
+
+    <h2> Teams </h2>
+    <ul class="teams">
+        <% for(var i = 0; i < teams.length; i++) {%>
+        <li class="teams">
+          <span><%= teams[i].team %></span>:
+          <span><%= teams[i].quote %></span>
+        </li>
+        <% } %>
+      </ul>
+
+    </section>
+    
+    <section data-position="update-team">
+      <div>
+
+        <p>
+          Replace first team with the real best team .
+        </p>
+        <button id="update-button">Replace team</button>
+      </div>
+    </section>
+
+    <section data-position="delete-team">
+      <div>
+        <h2>Remove a team</h2>
+        <p>
+          Delete a team from the list. Does nothing if the team is not there.
+        </p>
+        <button id="delete-button">Delete one team</button>
+      </div>
+      <div id="message"></div>
+    </section>
+
+
+    <script src="/main.js"></script>
+  </body>
+</html>
