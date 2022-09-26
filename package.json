@@ -8,6 +8,10 @@
     "dev": "nodemon server.js",
     "start": "node app.js"
   },
+    "engines": {
+    "node": "18.x" , 
+    "npm": "8.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kiikz/crud-practice.git"
